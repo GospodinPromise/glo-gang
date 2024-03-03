@@ -1,10 +1,26 @@
-let num = 266219;
-num = num.toString();
-num = +num[0] * +num[1] * +num[2] * +num[3] * +num[4] * +num[5];
-console.log (num);
+const num = 5;
+const numberArray = Array.from(String(num),Number);
+const size = numberArray.length;
+let result = 0;
+let resultOfResult = 0;
 
-num = num ** 3;
-console.log (num);
+function aboba(){
+    for(i=size-1; i>=0; i--) {
+        if(i===size-1){
+            result = numberArray[i] * 1 ;
+        } else {
+            resultOfResult = result * numberArray[i];
+            result = resultOfResult;
+        } 
+    }
+}
+aboba();
 
-num = num.toString();
-console.log(num[0]+num[1]);
+const resultX3 = result**3;
+const resultString = Array.from(String(resultX3),Number);
+console.log(String(resultString[0])+String(resultString[1]));
+
+
+
+
+
