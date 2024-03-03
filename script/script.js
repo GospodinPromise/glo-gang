@@ -12,7 +12,7 @@ console.log('Цель заработать',mission,'рублей/долларо
 
 addExpenses = addExpenses.toLowerCase ();
 addExpenses = addExpenses.split(',');
-console.log(addExpenses)
+console.log(addExpenses);
 
 const budgetDay = money / 30;
 console.log(budgetDay);
