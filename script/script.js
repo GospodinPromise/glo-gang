@@ -1,9 +1,15 @@
-const money = 1000;
-const income = 'фриланс';
-const addExpenses = '100, 200, 300';
-const deposit =  true;
-const mission = 10000;
-const period = 5;
-
-alert(income);
-console.log(income);
+'use strict';
+let dabchik = prompt('как дела БРОУ?');
+function aboba (a) {
+    if(typeof a != 'string') {
+        alert('ЭТО НЕ СТРОКА ЕБЛАН!!!');
+    } else if (a.length > 30) {
+        a = a.substring(0, 30);
+        a = a + '...';
+        return a.replaceAll(' ','');
+        }
+    else{
+        return a.replaceAll(' ','');
+        }};
+const zebra = aboba(dabchik);
+console.log(zebra);
