@@ -9,7 +9,7 @@ let PlusOrMinus = [];
 
 if (lang === 'ru') {
     console.log(ruDaysOfWeek);
-    PlusOrMinus.push (ruDaysOfWeek);
+    PlusOrMinus.push(ruDaysOfWeek);
 } else if (lang === 'en') {
     console.log(enDaysOfWeek);
     PlusOrMinus.push(enDaysOfWeek);
