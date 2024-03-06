@@ -1,5 +1,5 @@
 'use strict'
-const money = prompt('Ваш месячный доход?',10000);
+let money = prompt('Ваш месячный доход?',10000);
 const income = 'фриланс';
 let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
 const deposit =  confirm('Есть ли у вас депозит в банке?');
@@ -11,12 +11,24 @@ const expenses2 = prompt('Введите обязательную статью �
 const amount2 = prompt('Во сколько это обойдется?',1000);
 
 function getExpensesMonth (a,b) {  // возвращает сумму обязательных расходов за месяц 
-    return +a + +b;
+    if(typeof a === 'number' && typeof b === 'number'){
+    return a + b} else {
+    console.log('Введите пожалуйста число в сумме обязательных расходов')
+    }
 }
-function getAccumulatedMonth () {return +money - getExpensesMonth(amount1,amount2)}; // Возвращает накопления за месяц
+function getAccumulatedMonth () {return +money - getExpensesMonth(+amount1,+amount2)}; // Возвращает накопления за месяц
 const accumulatedMonth = getAccumulatedMonth(); // Результат вызова функции getAccumulatedMonth
 
-function getTargetMonth () { return mission / accumulatedMonth}; //  Подсчитывает за какой период будет достигнута цель, зная результат месячного накопления (accumulatedMonth) и возвращает результат
+function getTargetMonth (resultTargetMonth) {
+resultTargetMonth = mission / accumulatedMonth
+if(resultTargetMonth <= 0 ){
+    console.log('Цель не будет достигнута')
+    return resultTargetMonth
+} else {
+    console.log('Цель будет достигнута')
+    return resultTargetMonth
+}
+}; //  Подсчитывает за какой период будет достигнута цель, зная результат месячного накопления (accumulatedMonth) и возвращает результат
 
 addExpenses = addExpenses.split(',');
 const addExpensesSum = addExpenses.reduce((partialSum,currentValue) => +partialSum + +currentValue ,0); // Сумма массива addExpenses с возможными расходами 
@@ -37,6 +49,15 @@ if(budgetDay>1200){
 function showTypeOf () {
     console.log('',typeof money,'\n',typeof income,'\n',typeof addExpenses,'\n',typeof deposit,'\n',typeof mission); // функция showTypeOf. в задании сказано чтобы она была
 }
+
+function start () {
+    money = prompt('Ваш месячный доход?',10000);
+    
+    while (isNaN(parseFloat(money))){
+        money= prompt('Ваш Месячный Доход?')
+    }
+}
+start()
 
 showTypeOf();
 etStatusIncome();
