@@ -10,32 +10,32 @@ const amount1 = prompt('Во сколько это обойдется?',1000);
 const expenses2 = prompt('Введите обязательную статью расходов?');
 const amount2 = prompt('Во сколько это обойдется?',1000);
 
-function getExpensesMonth (a,b) {  // возвращает сумму обязательных расходов за месяц 
+function getExpensesMonth (a,b) {  
     if(typeof a === 'number' && typeof b === 'number'){
     return a + b} else {
     console.log('Введите пожалуйста число в сумме обязательных расходов')
     }
 }
-function getAccumulatedMonth () {return +money - getExpensesMonth(+amount1,+amount2)}; // Возвращает накопления за месяц
-const accumulatedMonth = getAccumulatedMonth(); // Результат вызова функции getAccumulatedMonth
+function getAccumulatedMonth () {return +money - getExpensesMonth(+amount1,+amount2)}; 
+const accumulatedMonth = getAccumulatedMonth(); 
 
 function getTargetMonth (resultTargetMonth) {
-resultTargetMonth = mission / accumulatedMonth
+resultTargetMonth = mission / accumulatedMonth;
 if(resultTargetMonth <= 0 ){
-    console.log('Цель не будет достигнута')
-    return resultTargetMonth
+    console.log('Цель не будет достигнута');
+    return resultTargetMonth;
 } else {
-    console.log('Цель будет достигнута')
-    return resultTargetMonth
+    console.log('Цель будет достигнута');
+    return resultTargetMonth;
 }
-}; //  Подсчитывает за какой период будет достигнута цель, зная результат месячного накопления (accumulatedMonth) и возвращает результат
+}; 
 
 addExpenses = addExpenses.split(',');
-const addExpensesSum = addExpenses.reduce((partialSum,currentValue) => +partialSum + +currentValue ,0); // Сумма массива addExpenses с возможными расходами 
+const addExpensesSum = addExpenses.reduce((partialSum,currentValue) => +partialSum + +currentValue ,0); 
 
-const budgetDay = Math.floor( accumulatedMonth / 30); // Заработок в сутки  
+const budgetDay = Math.floor( accumulatedMonth / 30); 
 
-function etStatusIncome () {       // Статус дохода
+function etStatusIncome () {       
 if(budgetDay>1200){
     console.log('У вас высокий уровень дохода');
 } else if (budgetDay>= 600 && budgetDay<=1200) {
@@ -47,14 +47,14 @@ if(budgetDay>1200){
 }}
 
 function showTypeOf () {
-    console.log('',typeof money,'\n',typeof income,'\n',typeof addExpenses,'\n',typeof deposit,'\n',typeof mission); // функция showTypeOf. в задании сказано чтобы она была
+    console.log('',typeof money,'\n',typeof income,'\n',typeof addExpenses,'\n',typeof deposit,'\n',typeof mission); 
 }
 
 function start () {
     money = prompt('Ваш месячный доход?',10000);
     
     while (isNaN(parseFloat(money))){
-        money= prompt('Ваш Месячный Доход?')
+        money= prompt('Ваш Месячный Доход?');
     }
 }
 start()
