@@ -1,5 +1,6 @@
 'use strict'
 let randomNumber = getRandomInt(0,100);
+
 function zamikanie () {
 let popitki = 10;
 aboba();
