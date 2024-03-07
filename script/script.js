@@ -1,9 +1,20 @@
-const money = 1000;
-const income = 'фриланс';
-const addExpenses = '100, 200, 300';
-const deposit =  true;
-const mission = 10000;
-const period = 5;
-
-alert(income);
-console.log(income);
+'use strict'
+function zamikanie () {
+const randomNumber = 34;
+aboba()
+function aboba () {
+    let question = prompt('Угадай число от 1 до 100')
+    if (question > randomNumber) {
+        alert('Загаданное число меньше')
+        aboba ()
+    } else if ( question < randomNumber && question != null) {
+        alert('Загаданное число больше')
+        aboba ()
+    } else if (!isNaN(question) === false) {
+        alert('Введите число')
+        aboba ()
+    }else if (+question === +randomNumber) {
+        alert ('Это верное число!')
+    }
+}}
+zamikanie()
