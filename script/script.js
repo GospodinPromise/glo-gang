@@ -9,7 +9,7 @@ const expenses1 = prompt('Введите обязательную статью �
 const amount1 = prompt('Во сколько это обойдется?');
 const expenses2 = prompt('Введите обязательную статью расходов?');
 const amount2 = prompt('Во сколько это обойдется?');
-
+console.log(addExpenses)
 const addExpensesSum = addExpenses.reduce((partialSum,currentValue) => +partialSum + +currentValue ,0);
 const budgetMonth = money - amount1 - amount2 - addExpensesSum; 
 console.log(budgetMonth);
