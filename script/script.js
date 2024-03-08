@@ -2,31 +2,34 @@
 
 'use strict'
 const language = confirm('ДА - RU, НЕТ - ENG');
-const lang = language===true ? 'ru' : 'en';
-const ruDaysOfWeek = ' Понедельник \n Вторник \n Среда \n Четверг \n Пятница';
-const enDaysOfWeek = ' Monday \n Tuesday \n Wednesday \n Friday \n Saturday';
-let PlusOrMinus = [];
+const DaysOfWeek = {
+    ru : ' Понедельник \n Вторник \n Среда \n Четверг \n Пятница',
+    en : ' Monday \n Tuesday \n Wednesday \n Friday \n Saturday'
+};
 
-if (lang === 'ru') {
-    console.log(ruDaysOfWeek);
-    PlusOrMinus.push(ruDaysOfWeek);
-} else if (lang === 'en') {
-    console.log(enDaysOfWeek);
-    PlusOrMinus.push(enDaysOfWeek);
+let plusOrMinus = [];
+
+if (language === true) {
+    console.log(String(DaysOfWeek.ru));
+    plusOrMinus.push(String(DaysOfWeek.ru));
+} else if (language === false) {
+    console.log(String(DaysOfWeek.en));
+    plusOrMinus.push(String(DaysOfWeek.en));
 }
 
-switch (lang) {
-    case 'ru':
-        console.log(ruDaysOfWeek);
+switch (language) {
+    case true:
+        console.log(String(DaysOfWeek.ru));
         break;
-    case 'en':
-        console.log(enDaysOfWeek);
+    case false:
+        console.log(String(DaysOfWeek.en));
         break;
 }
 
-console.log(String(PlusOrMinus));
+console.log(String(plusOrMinus));
 
 // ВТОРОЕ ЗАДАНИЕ 
 
-const namePerson = prompt('Артем или Максим или Другое значение?');
-const maxim = namePerson === 'Максим' ? console.log('преподаватель') : namePerson === 'Артем' ? console.log('директор') : console.log('студент');
+const namePerson = prompt('Введите имя');
+function maxim () {namePerson === 'Максим' ? console.log('преподаватель') : namePerson === 'Артем' ? console.log('директор') : console.log('студент')};
+maxim ()
