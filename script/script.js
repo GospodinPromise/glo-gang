@@ -1,7 +1,7 @@
 'use strict'
 const money = prompt('Ваш месячный доход?');
 const income = 'фриланс';
-let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
+const addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую').split(',');
 const deposit =  confirm('Есть ли у вас депозит в банке?');
 const mission = 10000;
 const period = 5;
@@ -10,7 +10,6 @@ const amount1 = prompt('Во сколько это обойдется?');
 const expenses2 = prompt('Введите обязательную статью расходов?');
 const amount2 = prompt('Во сколько это обойдется?');
 
-addExpenses = addExpenses.split(',');
 const addExpensesSum = addExpenses.reduce((partialSum,currentValue) => +partialSum + +currentValue ,0);
 const budgetMonth = money - amount1 - amount2 - addExpensesSum; 
 console.log(budgetMonth);
