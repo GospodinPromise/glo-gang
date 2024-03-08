@@ -1,7 +1,7 @@
 'use strict'
 const money = prompt('Ваш месячный доход?');
 const income = 'фриланс';
-const addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую').split(',');
+const addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую').split(',')
 const deposit =  confirm('Есть ли у вас депозит в банке?');
 const mission = 10000;
 const period = 5;
