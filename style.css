@@ -1,0 +1,19 @@
+
+#color{
+    font-size: 30px;
+}
+#change{
+    width: 200px;
+    height: 100px;
+    grid-column: 5 / 8;
+}
+.body {
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    transition: all 500ms ease-in-out;
+}
+
+.wrapper{
+    grid-column: 5 / 8;
+}
