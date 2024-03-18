@@ -1,0 +1,27 @@
+button {
+    height: 100px;
+    width: 150px;
+    font-size: 15px;
+    grid-row: 2;
+}
+body {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+h1{ grid-column: 6 / 9;
+grid-row: 1;}
+.avtoriz{
+    grid-column: 4 / 6;
+}
+.register{
+    grid-column: 9 / 11;
+}
+ul{
+    grid-column: 6 / 8;
+}
+.spisok{
+    grid-column: 4 / 10;
+    grid-row: 3;
+    font-size: 22px;
+}
